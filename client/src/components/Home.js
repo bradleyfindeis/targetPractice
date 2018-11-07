@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Image, Transformation } from 'react';
 import { Header } from 'semantic-ui-react';
-import { Grid, Image, Container, Icon } from 'semantic-ui-react'
+import { Grid, Container, Icon, Image } from 'semantic-ui-react'
 
 const targetGrid = () => {
   
@@ -20,199 +20,33 @@ class Home extends Component {
 
   _onClick(e) {
     this.setState({ x: e.screenX, y: e.screenY, shotCounter: (this.state.shotCounter + 1), dot: {x: e.screenX, y: e.screenY},  });
+   return 
+    <Image src='https://www.freepngimg.com/thumb/bullet%20hole/2-bullet-shot-hole-png-image.png' />
   }
 
+  GridColumn = () => {
+    return(
+        <Grid.Row height={4}>
+        {[...Array(12)].map(i => (
+          <Grid.Column> <br/><br/> <br/></Grid.Column>
+        ))}
+        </Grid.Row>
+    )    
+  }
 
   render() {
     const { x, y, shotCounter, dot } = this.state;
+    const GridColumn = this.GridColumn
     return (
-      <Container onClick={this._onClick.bind(this)}>
+      <Container>
         <h1>Mouse coordinates: { x } { y }</h1>
         <h1>Counter: {shotCounter} </h1>
         <h1> X: {dot.x} Y: {dot.y} </h1>
-          <Grid columns={12} celled height={4}>
-        <Icon disabled size='large' name='circle' x={x} y={y}/>
-            <Grid.Row height={4}>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-
-            </Grid.Row>
-
-            <Grid.Row height={4}>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-            </Grid.Row>
-            <Grid.Row height={4}>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-
-            </Grid.Row>
-
-            <Grid.Row height={4}>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-            </Grid.Row>
-            <Grid.Row height={4}>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-
-            </Grid.Row>
-
-            <Grid.Row height={4}>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-            </Grid.Row>
-            <Grid.Row height={4}>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-
-            </Grid.Row>
-
-            <Grid.Row height={4}>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-            </Grid.Row>
-            <Grid.Row height={4}>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-
-            </Grid.Row>
-
-            <Grid.Row height={4}>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-            </Grid.Row>
-            <Grid.Row height={4}>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-
-            </Grid.Row>
-
-            <Grid.Row height={4}>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-              <Grid.Column> <br/><br/> <br/></Grid.Column>
-            </Grid.Row>
-          </Grid>
+          <Grid columns={12} celled height={4} onClick={this._onClick.bind(this)}>
+            {[...Array(12)].map(i => (
+                <GridColumn />
+            ))}
+            </Grid>        
         </Container>
     );
   }

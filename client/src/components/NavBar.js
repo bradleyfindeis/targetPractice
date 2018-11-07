@@ -37,6 +37,9 @@ class NavBar extends Component {
           <Link to="/">
             <Menu.Item name="home" />
           </Link>
+          <Link to="/Siting_In">
+            <Menu.Item name="siting_in" />
+          </Link>
           { this.rightNavs() }
         </Menu>
       </div>
