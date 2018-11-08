@@ -7,7 +7,7 @@ import { Grid, Container, Icon } from 'semantic-ui-react';
 
 
 
-class SitingIn extends Component {
+class Three extends Component {
 
     state = {
         image: null,
@@ -71,33 +71,18 @@ class SitingIn extends Component {
     const { x, y, shotCounter, dot } = this.state;
     const GridColumn = this.GridColumn
     return (
-        <Container>
-        <h1>Counter: {shotCounter} </h1>
-        <h1> X: {dot.x} Y: {dot.y} </h1>
-            <Stage  width={window.innerWidth} height={window.innerHeight}>
-        <Layer opacity={0.5}>
-          {[...Array(10)].map(i => (
-              <Image key={i} 
-              draggable 
-              image={this.state.image}
-              onDragStart={this.handleDragStart}
-              onDragEnd={this.handleDragEnd}
-              x={Math.random() * window.innerWidth}
-              y={Math.random() * window.innerHeight}
-              />
-            ))}
-        </Layer>
-            {/* <Grid columns={12} celled height={4}>
+        <div>
+        <Grid columns={12} celled height={4}>
                 {[...Array(12)].map(i => (
                     <GridColumn key={i} />
                 ))}
-            </Grid> */}
+            </Grid>
+        <Stage opacity={0}  width={window.innerWidth} height={window.innerHeight}>
       </Stage>
-      </Container>
+      </div>
     );
   }
 }
 
-render(<SitingIn />, document.getElementById('root'));
 
-export default SitingIn;
+export default Three;
